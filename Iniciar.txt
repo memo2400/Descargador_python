@@ -1,0 +1,80 @@
+#### Entorno ####
+
+crear entorno 
+python -m venv venv
+
+activar
+venv\Scripts\activate
+
+instalar requisitos
+python -m pip install -r requirements.txt
+
+
+#### instalar manual #####
+
+
+Intalar 
+$ pip install yt-dlp
+
+
+ejecutar:
+$ python descargador.py
+
+usar directo
+$ python descargador_youtube.py "https://youtube.com/watch?v=" video
+
+
+#### guardar requerimientos ####
+
+pip freeze > requirements.txt
+
+
+
+
+
+######################################
+
+Opciones para videos
+if tipo == 'video':
+    opciones = {
+        'outtmpl': f'{carpeta}/%(title)s.%(ext)s',
+        'format': 'best[height<=1080]',  # Máximo 1080p
+        
+        # 📊 CALIDAD Y FORMATO
+        'format': 'bestvideo[height<=720]+bestaudio/best[height<=720]',  # Combinar mejor video+audio
+        # 'format': 'worst',  # Peor calidad (para ahorrar espacio)
+        # 'format': 'mp4/best',  # Forzar formato MP4
+        # 'format': 'best[height=720]',  # Exactamente 720p
+        
+        # 📁 GESTIÓN DE ARCHIVOS
+        'restrictfilenames': True,  # Eliminar caracteres especiales del nombre
+        'nooverwrites': True,  # No sobrescribir archivos existentes
+        'continuedl': True,  # Continuar descargas interrumpidas
+        
+        # 📹 CONFIGURACIÓN DE VIDEO
+        'merge_output_format': 'mp4',  # Formato al combinar video+audio
+        'writethumbnail': True,  # Descargar miniatura
+        'embedsubtitles': True,  # Incrustar subtítulos en el video
+        'addmetadata': True,  # Añadir metadatos
+        
+        # 🌐 CONFIGURACIÓN DE RED
+        'socket_timeout': 30,  # Timeout de conexión
+        'retries': 10,  # Reintentos en caso de error
+        'fragment_retries': 10,  # Reintentos de fragmentos
+        'buffersize': 1024,  # Tamaño del buffer
+        
+        # 📋 SUBTÍTULOS
+        'writesubtitles': True,  # Descargar subtítulos
+        'writeautomaticsub': True,  # Descargar subtítulos automáticos
+        'subtitleslangs': ['es', 'en'],  # Idiomas de subtítulos preferidos
+        'subtitlesformat': 'srt',  # Formato de subtítulos (srt, vtt, etc)
+        
+        # 🎨 MINIATURAS
+        'writethumbnail': True,  # Descargar miniatura
+        'convert_thumbnail': 'jpg',  # Convertir miniatura a JPG
+        
+        # 📊 INFORMACIÓN Y LOGS
+        'quiet': False,  # Mostrar progreso
+        'no_warnings': False,  # Mostrar advertencias
+        'progress_hooks': [mi_funcion_progreso],  # Hook para progreso
+    }
