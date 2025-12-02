@@ -25,7 +25,7 @@ def descargar_youtube(url, tipo='video', carpeta='./descargas'):
     if tipo == 'video':
         opciones = {
             'outtmpl': f'{carpeta}/%(title)s.%(ext)s',
-            # 'format': 'best[height<=1080]',  # Máximo 1080p
+            #'format': 'best[height<=1080]',  # Máximo 1080p
             'format': 'mp4/best',  # Forzar formato MP4
         }
     else:  # audio
@@ -61,6 +61,8 @@ def descargar_youtube(url, tipo='video', carpeta='./descargas'):
 # YO
 
 # url = "https://www.youtube.com/watch?v=deL5dM9csNc&list=RDdeL5dM9csNc&start_radio=1"
-url = "https://youtu.be/deL5dM9csNc?si=brPqiFacGU30jWN_"
+# url = "https://youtu.be/deL5dM9csNc?si=brPqiFacGU30jWN_"
+urlHelloween = "https://youtu.be/RwQVCIWocB4?si=PuMLtTX1GbSDWHLW"
+url = urlHelloween
 print ("Gordoo")
 descargar_youtube(url, 'video')
