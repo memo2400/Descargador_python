@@ -29,7 +29,20 @@ $ python descargador_youtube.py "https://youtube.com/watch?v=" video
 pip freeze > requirements.txt
 
 
+###### ACTUALIZAR LIBRERIA 1 POR 1 ###########
 
+$ pip install --upgrade yt-dlp
+
+$ pip freeze > requirements.txt
+
+
+###### ACTUALIZAR LIBRERIA MASSIVO nO LO HE PROBADO ###########
+
+pip install pip-tools
+
+pip-compile --upgrade requirements.txt
+
+pip install -r requirements.txt
 
 
 ######################################
