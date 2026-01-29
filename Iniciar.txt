@@ -1,3 +1,7 @@
+#### requerimientos Linux ####
+$ apt install python3.12-venv
+
+
 #### Entorno ####
 
 crear entorno 
@@ -7,7 +11,8 @@ activar
 venv\Scripts\activate
 
 instalar requisitos
-python -m pip install -r requirements.txt
+$ python -m pip install -r requirements.txt
+$ python3 -m pip install -r requirements.txt
 
 
 #### instalar manual #####
