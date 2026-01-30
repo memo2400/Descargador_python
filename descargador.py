@@ -22,13 +22,15 @@ def descargar_youtube(url, tipo='video', carpeta='./descargas'):
         carpeta (str): Carpeta de destino
     """
     
+    ffmpeg_path = r"C:\Users\guillermorosas_tecno\Videos\Proyectos\ffmpeg-8.0.1-essentials\bin"
+
     if tipo == 'video':
         opciones = {
             'outtmpl': f'{carpeta}/%(title)s.%(ext)s',
-            #'format': 'best[height<=1080]',  # Máximo 1080p
-            'format': 'mp4/best',  # Forzar formato MP4
+            'format': 'best[height<=360]',  # Máximo 1080p
+            #'format': 'mp4/best',  # Forzar formato MP4
         }
-    else:  # audio
+    elif tipo == 'mp3':  # audio
         opciones = {
             'outtmpl': f'{carpeta}/%(title)s.%(ext)s',
             'format': 'bestaudio/best',
@@ -37,6 +39,7 @@ def descargar_youtube(url, tipo='video', carpeta='./descargas'):
                 'preferredcodec': 'mp3',
                 'preferredquality': '192',
             }],
+            'ffmpeg_location': ffmpeg_path
         }
     
     try:
@@ -62,7 +65,7 @@ def descargar_youtube(url, tipo='video', carpeta='./descargas'):
 
 # url = "https://www.youtube.com/watch?v=deL5dM9csNc&list=RDdeL5dM9csNc&start_radio=1"
 # url = "https://youtu.be/deL5dM9csNc?si=brPqiFacGU30jWN_"
-urlHelloween = "https://youtu.be/RwQVCIWocB4?si=PuMLtTX1GbSDWHLW"
+urlHelloween = "https://www.youtube.com/watch?v=0PreZOe19_Q"
 url = urlHelloween
 print ("Gordoo")
-descargar_youtube(url, 'video')
+descargar_youtube(url, 'mp3')

@@ -1,0 +1,12 @@
+
+Descargar un buil release de:
+https://www.gyan.dev/ffmpeg/builds/#about-these-builds
+
+use de 31MB: 
+    ffmpeg-8.0.1-essentials_build
+
+Se descomprime el archivo, y se copia la ruta del bin
+en el algoritmo de python
+
+
+sitio oficial, https://www.gyan.dev/ffmpeg/builds/
