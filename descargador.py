@@ -22,7 +22,8 @@ def descargar_youtube(url, tipo='video', carpeta='./descargas'):
         carpeta (str): Carpeta de destino
     """
     
-    ffmpeg_path = r"C:\Users\guillermorosas_tecno\Videos\Proyectos\ffmpeg-8.0.1-essentials\bin"
+    # ffmpeg_path = r"C:\Users\guillermorosas_tecno\Videos\Proyectos\ffmpeg-8.0.1-essentials\bin"
+    ffmpeg_path = r"C:\Users\guillermorosas_tecno\Videos\Proyectos\Propio\Py_videos\ffmpeg-8.0.1-essentials\bin"
 
     if tipo == 'video':
         opciones = {
@@ -65,7 +66,7 @@ def descargar_youtube(url, tipo='video', carpeta='./descargas'):
 
 # url = "https://www.youtube.com/watch?v=deL5dM9csNc&list=RDdeL5dM9csNc&start_radio=1"
 # url = "https://youtu.be/deL5dM9csNc?si=brPqiFacGU30jWN_"
-urlHelloween = "https://www.youtube.com/watch?v=0PreZOe19_Q"
+urlHelloween = "https://youtu.be/_Q9Ss5zZU4k?si=tjNAcD32yPrmqZI4"
 url = urlHelloween
 print ("Gordoo")
 descargar_youtube(url, 'mp3')
