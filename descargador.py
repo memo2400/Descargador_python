@@ -30,6 +30,11 @@ def descargar_youtube(url, tipo='video', carpeta='./descargas'):
             'outtmpl': f'{carpeta}/%(title)s.%(ext)s',
             'format': 'best[height<=360]',  # Máximo 1080p
             #'format': 'mp4/best',  # Forzar formato MP4
+
+            'writesubtitles': True,
+            'writeautomaticsub': True,
+            'subtitleslangs': ['en'],
+            'embedsubtitles': True,
         }
     elif tipo == 'mp3':  # audio
         opciones = {
@@ -66,7 +71,7 @@ def descargar_youtube(url, tipo='video', carpeta='./descargas'):
 
 # url = "https://www.youtube.com/watch?v=deL5dM9csNc&list=RDdeL5dM9csNc&start_radio=1"
 # url = "https://youtu.be/deL5dM9csNc?si=brPqiFacGU30jWN_"
-urlHelloween = "https://youtu.be/_Q9Ss5zZU4k?si=tjNAcD32yPrmqZI4"
+urlHelloween = "https://youtu.be/2Ov8c_uTbWQ?si=59eqUGUcOp-mFSs3"
 url = urlHelloween
 print ("Gordoo")
-descargar_youtube(url, 'mp3')
+descargar_youtube(url, 'video')
