@@ -28,13 +28,23 @@ def descargar_youtube(url, tipo='video', carpeta='./descargas'):
     if tipo == 'video':
         opciones = {
             'outtmpl': f'{carpeta}/%(title)s.%(ext)s',
-            'format': 'best[height<=360]',  # Máximo 1080p
+            'format': 'best[height<=480]',  # Máximo 1080p
             #'format': 'mp4/best',  # Forzar formato MP4
 
             'writesubtitles': True,
             'writeautomaticsub': True,
             'subtitleslangs': ['en'],
-            'embedsubtitles': True,
+            # 'embedsubtitles': True,
+
+            'extractor_args': {
+                'youtube': {
+                    'player_client': ['android', 'web']
+                }
+            },
+
+            'http_headers': {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            }
         }
     elif tipo == 'mp3':  # audio
         opciones = {
@@ -71,7 +81,7 @@ def descargar_youtube(url, tipo='video', carpeta='./descargas'):
 
 # url = "https://www.youtube.com/watch?v=deL5dM9csNc&list=RDdeL5dM9csNc&start_radio=1"
 # url = "https://youtu.be/deL5dM9csNc?si=brPqiFacGU30jWN_"
-urlHelloween = "https://youtu.be/2Ov8c_uTbWQ?si=59eqUGUcOp-mFSs3"
+urlHelloween = "https://youtu.be/C5eBZfQW_mg?si=siUG1jNuBRQEXs6m"
 url = urlHelloween
 print ("Gordoo")
 descargar_youtube(url, 'video')
